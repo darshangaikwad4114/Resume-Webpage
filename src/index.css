@@ -8,6 +8,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
   }
   
   ::selection {
@@ -16,5 +17,78 @@
 
   body {
     @apply transition-colors duration-200;
+  }
+
+  a:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-gray-800 rounded-sm;
+  }
+
+  button:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 dark:ring-offset-gray-800 rounded-sm;
+  }
+}
+
+@layer components {
+  .btn-custom {
+    @apply bg-white text-gray-900 dark:bg-gray-800 dark:text-white rounded-full text-base font-semibold py-2.5 px-6 cursor-pointer transition-all duration-300 border border-gray-900 dark:border-gray-300 shadow-none;
+  }
+  
+  .btn-custom:hover {
+    @apply -translate-y-1 -translate-x-0.5 shadow-[2px_5px_0_0_rgba(0,0,0,0.8)] dark:shadow-[2px_5px_0_0_rgba(255,255,255,0.8)];
+  }
+  
+  .btn-custom:active {
+    @apply translate-y-0.5 translate-x-0.5 shadow-none;
+  }
+}
+
+/* Print styles */
+@media print {
+  html, body {
+    @apply bg-white text-black !important;
+  }
+
+  body {
+    @apply p-0 !important;
+  }
+
+  main {
+    @apply shadow-none rounded-none !important;
+  }
+
+  header {
+    @apply border-b-gray-300 !important;
+  }
+
+  footer {
+    @apply hidden !important;
+  }
+
+  a {
+    @apply text-black underline !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-black !important;
+  }
+
+  p, li {
+    @apply text-gray-700 !important;
+  }
+
+  /* Ensure page breaks don't happen in the middle of sections */
+  section {
+    @apply break-inside-avoid;
+  }
+
+  /* Hide external link icons when printing */
+  svg[aria-hidden="true"] {
+    @apply hidden;
+  }
+
+  /* Add link URLs after the text when printing */
+  a[href^="http"]:not([href*="mailto"])::after {
+    content: " (" attr(href) ")";
+    @apply text-gray-600 text-sm;
   }
 }
