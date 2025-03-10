@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface SectionHeadingProps {
   children: React.ReactNode;
@@ -7,8 +7,8 @@ interface SectionHeadingProps {
 
 const SectionHeading: React.FC<SectionHeadingProps> = ({ children, id }) => {
   return (
-    <h2 
-      id={id} 
+    <h2
+      id={id}
       className="text-xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight"
     >
       {children}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface SkillItemProps {
   category: string;
@@ -8,7 +8,10 @@ interface SkillItemProps {
 const SkillItem: React.FC<SkillItemProps> = ({ category, skills }) => {
   return (
     <p>
-      <span className="font-semibold text-gray-900 dark:text-white">{category}:</span> {skills}
+      <span className="font-semibold text-gray-900 dark:text-white">
+        {category}:
+      </span>{" "}
+      {skills}
     </p>
   );
 };

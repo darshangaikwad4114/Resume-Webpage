@@ -1,5 +1,5 @@
-import React from 'react';
-import { ExternalLink } from 'lucide-react';
+import React from "react";
+import { ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -14,26 +14,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveLink,
   sourceLink,
   techStack,
-  points
+  points,
 }) => {
   return (
     <div className="transition-all duration-300">
       <h3 className="font-semibold text-gray-900 dark:text-white flex flex-wrap items-center gap-x-1">
-        <span>{title}</span> | 
-        <a 
-          href={liveLink} 
+        <span>{title}</span> |
+        <a
+          href={liveLink}
           className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200 inline-flex items-center gap-1"
-          target="_blank" 
+          target="_blank"
           rel="noopener noreferrer"
           aria-label={`${title} live demo (opens in new tab)`}
         >
           Live
           <ExternalLink size={14} className="opacity-70" aria-hidden="true" />
-        </a> | 
-        <a 
-          href={sourceLink} 
+        </a>{" "}
+        |
+        <a
+          href={sourceLink}
           className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200 inline-flex items-center gap-1"
-          target="_blank" 
+          target="_blank"
           rel="noopener noreferrer"
           aria-label={`${title} source code on GitHub (opens in new tab)`}
         >
